@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+  }
+.new-post {
+    margin: 0.5em;
+
+}
+
+.new-post textarea {
+    width: 75%;   
+}
