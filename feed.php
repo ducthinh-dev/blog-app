@@ -1,8 +1,11 @@
-<?php
+<?php 
 session_start();
-    $_SESSION;
 
-    include "functions/connect-db.php"
+	include("functions/connection.php");
+	include("functions/functions.php");
+
+	$user_data = check_login($con);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
