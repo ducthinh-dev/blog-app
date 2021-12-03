@@ -2,7 +2,7 @@
 <!-- GET POST-->
 <?php
     $sql="SELECT * FROM POST";
-    $get_post=mysqli_query($connection, $sql);
+    $get_post=mysqli_query($con, $sql);
 
     while($posts=mysqli_fetch_assoc($get_post)) {
         $post_user=$posts['userID'];

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-	include("functions/connection.php");
+	include("functions/connect-db.php");
 	include("functions/functions.php");
 
 	$user_data = check_login($con);
@@ -32,7 +32,7 @@ session_start();
     </div>
 
     <?php 
-        include "functions/create-post.php"
+        include "functions/create-post.php";
     ?>
     <hr>
     <!-- FEED -->

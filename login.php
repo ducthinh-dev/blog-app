@@ -2,7 +2,7 @@
 
 session_start();
 
-	include("functions/connection.php");
+	include("functions/connect-db.php");
 	include("functions/functions.php");
 
 
@@ -16,7 +16,7 @@ session_start();
 		{
 
 			//read from database
-			$query = "select * from users where username = '$user_name' limit 1";
+			$query = "select * from user where username = '$user_name' limit 1";
 			$result = mysqli_query($con, $query);
 
 			if($result)
@@ -30,7 +30,7 @@ session_start();
 					{
 
 						$_SESSION['userID'] = $user_data['userID'];
-						header("Location: index.php");
+						header("Location: feed.php");
 						die;
 					}
 				}

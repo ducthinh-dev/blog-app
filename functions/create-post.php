@@ -3,8 +3,10 @@
         $post_id=random_num(20);
         $post_content=$_POST["content"];
         
-        $query = "insert into user (userID,username,password) values ('$user_id','$user_name','$password')";
+        $id=$user_data['$userID'];
+        $query = "insert into post (postID,userID,content) values ('$post_id','$id','$post_content')";
 
-        mysqli_query($connection, $query);
-        
+        mysqli_query($con, $query);
+
     }
+?>
