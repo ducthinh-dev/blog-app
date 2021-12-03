@@ -14,7 +14,11 @@
 </head>
 <body>
     <!-- HEADER -->
-    <?php include "assets/header.php"?>
+    <?php 
+        include "assets/header.php";
+        //Get username here
+        $username=username;
+    ?>
     <!-- CREATE POST -->
     <div class="new-post">
         <form action="feed.php" method="post">

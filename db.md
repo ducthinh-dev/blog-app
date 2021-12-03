@@ -1,8 +1,8 @@
 ## Relation database
 
 user    (userID, username, password);
-post    (postID, userID, content);
-comment (commentID, postID, userID, content);
+post    (postID, userID, content, date);
+comment (postID, userID, content, date);
 
 149.28.128.174
 administrator
