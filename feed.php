@@ -17,7 +17,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
+    <title><?php echo $user_data['username']?></title>
 </head>
 <body>
     <!-- HEADER -->
@@ -31,7 +31,7 @@ session_start();
             <input type="submit" name="create-post" value="Post">
         </form>
     </div>
-
+    <div class="post-comment-section">
     <?php 
         include "functions/create-post.php";
     ?>
@@ -40,6 +40,7 @@ session_start();
     <?php include "functions/get-post.php" ?>
     <!-- FOOTER -->
     <?php include "assets/footer.php"?>
+    </div>
 </body>
 </html>
 

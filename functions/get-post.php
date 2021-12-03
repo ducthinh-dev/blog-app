@@ -11,18 +11,19 @@
         //$post_date=$posts['date'];
 
 
-        //GET username
+        // GET username
         $sql="select username from user where userID='$post_user'";
         $result=mysqli_query($con,$sql);
         $get_username=mysqli_fetch_assoc($result);
         $name=$get_username['username'];
-        
-        // GET POST
-        echo "<h3>$name: </h3> <br> 
-        <p>$post_content</p> <hr>";
-        //GET COMMENT
+        // RENDER POST
+        ?>
+        <hr><p><?php echo $post_content ?></p><span><?php echo $name ?></span><br>
+        <button><a href="functions/delete-post.php?id=<?php echo $post_ID; ?>">Delete</a></button>
+        <?php
+        // GET COMMENT
         include "get-comment.php";
-        //COMMENT
+        // RENDER COMMENT
         include "create-comment.php";
     }
 ?>

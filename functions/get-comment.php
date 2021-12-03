@@ -8,8 +8,7 @@
         $comment_content=$comments['content'];
         $comment_date=$comments['date'];
 
-        echo "<h4>$comment_user</h4> <br>
-        <p>$comment_content</p> <br>
+        echo "<h4>$comment_user: </h4><p>$comment_content</p> <br>
         <span>$comment_date</span>";
     }
 ?>
