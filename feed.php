@@ -1,4 +1,7 @@
 <?php
+session_start();
+    $_SESSION;
+
     include "functions/connect-db.php"
 ?>
 <!DOCTYPE html>
