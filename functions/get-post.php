@@ -8,12 +8,14 @@
         $post_user=$posts['userID'];
         $post_content=$posts['content'];
         $post_ID=$posts['postID'];
+        $post_date=$posts['date'];
 
-        echo "<h3>$post_user</h3> <br>
-        <div>$post_content</div> <hr>";
+        echo "<h3>$post_user</h3> <h4> $post_date</h4> <br>
+        <p>$post_content</p> <hr>";
         //GET COMMENT
         include "get-comment.php";
+        //COMMENT
+        include "create-comment.php";
     }
 ?>
-</div>
 </div>

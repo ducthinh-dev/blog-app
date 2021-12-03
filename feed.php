@@ -10,8 +10,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="css/feed-style.css" rel="stylesheet">
+    <link href="css/post-comment-styles.css" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,8 +22,6 @@ session_start();
     <!-- HEADER -->
     <?php 
         include "assets/header.php";
-        //Get username here
-        $username=username;
     ?>
     <!-- CREATE POST -->
     <div class="new-post">

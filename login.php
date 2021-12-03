@@ -16,7 +16,7 @@ session_start();
 		{
 
 			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
+			$query = "select * from users where username = '$user_name' limit 1";
 			$result = mysqli_query($con, $query);
 
 			if($result)
@@ -29,7 +29,7 @@ session_start();
 					if($user_data['password'] === $password)
 					{
 
-						$_SESSION['user_id'] = $user_data['user_id'];
+						$_SESSION['userID'] = $user_data['userID'];
 						header("Location: index.php");
 						die;
 					}
