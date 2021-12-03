@@ -15,7 +15,7 @@ session_start();
 		{
 
 			//save to database
-			$userID = random_num(20);
+			$userID = random_num(4);
 			$query = "insert into user (userID,username,password) values ('$userID','$user_name','$password')";
 
 			mysqli_query($con, $query);
@@ -33,39 +33,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="css/login-signup.css" rel="stylesheet">
 	<title>Signup</title>
 </head>
 <body>
-
-	<style type="text/css">
-	
-	#text{
-
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
-
-	#button{
-
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
-
-	#box{
-
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
-
-	</style>
 
 	<div id="box">
 		

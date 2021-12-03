@@ -33,7 +33,7 @@ function random_num($length)
 		$length = 5;
 	}
 
-	$len = rand(4,$length);
+	$len = rand(1,$length);
 
 	for ($i=0; $i < $len; $i++) { 
 		# code...
