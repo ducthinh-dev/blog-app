@@ -1,6 +1,7 @@
 <div class="post">
 <!-- GET POST-->
 <?php
+    $current_user = $user_data['userID'];
     $sql="SELECT * FROM POST";
     $get_post=mysqli_query($con, $sql);
 
@@ -19,11 +20,20 @@
         // RENDER POST
         ?>
         <hr><p><?php echo $post_content ?></p><span><?php echo $name ?></span><br>
-        <button><a href="functions/delete-post.php?id=<?php echo $post_ID; ?>">Delete</a></button>
+        <button><a href="functions/delete-post.php?id=<?php echo $post_ID?>&user_id=<?php echo $post_user?>&userID=<?php echo $current_user?>">Delete</a></button>
         <?php
         // GET COMMENT
         include "get-comment.php";
-        // RENDER COMMENT
+        // COMMENT BOX
+        ?>
+        <div class="new-comment">
+                <form action="feed.php" method="post" id="comment">
+                    <textarea name="comment-content" placeholder="Write comment" style="height: 30px"></textarea> <br>
+                    <input name="comment-post" value="<?php echo "$post_ID"?>" hidden>
+                    <input type="submit" name="create-comment" value="Comment"> <hr>
+                </form>
+        </div>
+        <?php
         include "create-comment.php";
     }
 ?>

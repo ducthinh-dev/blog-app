@@ -1,17 +1,15 @@
 <?php
     if(isset($_POST["create-comment"])) {
+        $comment_id=random_num(7);
         $comment_content=$_POST["comment-content"];
-        $date=date("Y-m-d h:i:sa");
+        $date=date("Y-m-d H:i:s");
         $id=$user_data['userID'];
-        $query = "insert into comment (postID,userID,content,date) values ('$post_ID','$id','$comment_content','$date')";
+        $comment_post=$_POST['comment-post'];
+        $query = "insert into comment (commentID,postID,userID,content,date) values ('$comment_id','$comment_post','$id','$comment_content','$date')";
 
         mysqli_query($con, $query);
+        header("Location: #");
+        die;
 
     }
 ?>
-<div class="new-comment">
-        <form action="feed.php" method="post">
-            <textarea name="comment-content" placeholder="Write comment" style="height: 30px"></textarea> <br>
-            <input type="submit" name="create-comment" value="Comment"> <hr>
-        </form>
-</div>

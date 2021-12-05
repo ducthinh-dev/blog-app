@@ -3,15 +3,19 @@
 include "connect-db.php";
 
 $id = $_GET['id'];
+$post_user = $_GET['user_id'];
+$current_user = $_GET['userID'];
 
-if($user_data['userID'] === $post_user)
+if($current_user === $post_user)
 {
-    $del = mysqli_query($con,"delete from post where postID = '$id'");
+    mysqli_query($con,"delete from post where postID = '$id'");
+    mysqli_query($con, "delete from comment where postID = '$id'");
+    
     header("location: ../feed.php");
     die;
 }else
 {
-    header("location: ../feed.php");
+    echo "Cannot delete other's posts!";
     die;
 }
 

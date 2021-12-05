@@ -1,15 +1,25 @@
 <div class="comment">
+<!-- GET comment-->
 <?php
-    $sql="SELECT comment.content, user.username, comment.date FROM comment, user WHERE comment.userID = user.userID AND comment.postID='$post_ID'";
-    $get_comment=mysqli_query($con,$sql);
+    $sql="SELECT * FROM comment where postID = '$post_ID' order by date asc";
+    $get_comment=mysqli_query($con, $sql);
 
-    while($comments=mysqli_fetch_assoc($get_comment)) {
+    while($comments=mysqli_fetch_assoc($get_comment)) 
+    {
         $comment_user=$comments['userID'];
         $comment_content=$comments['content'];
-        $comment_date=$comments['date'];
+        //$post_date=$posts['date'];
 
-        echo "<h4>$comment_user: </h4><p>$comment_content</p> <br>
-        <span>$comment_date</span>";
+
+        // GET username
+        $sql="select username from user where userID='$comment_user'";
+        $result=mysqli_query($con,$sql);
+        $get_username=mysqli_fetch_assoc($result);
+        $name=$get_username['username'];
+        // RENDER comment
+        ?>
+        <hr><p><?php echo $name ?>: <?php echo $comment_content ?></p><br>
+        <?php
     }
 ?>
 </div>
