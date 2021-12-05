@@ -20,7 +20,8 @@
         // RENDER POST
         ?>
         <hr><p><?php echo $post_content ?></p><span><?php echo $name ?></span><br>
-        <button><a href="functions/delete-post.php?id=<?php echo $post_ID?>&user_id=<?php echo $post_user?>&userID=<?php echo $current_user?>">Delete</a></button>
+        <?php $q_delete = "functions/delete-post.php?id=".$post_ID."&user_id=".$post_user ?>
+        <button><a href="<?php echo $q_delete?>">Delete</a></button>
         <?php
         // GET COMMENT
         include "get-comment.php";

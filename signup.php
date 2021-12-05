@@ -10,8 +10,9 @@ session_start();
 		//something was posted
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
+		$invalid_str="/[\'^£$%&*()}{@#~?><>,|=_+¬-]/";
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name) && !preg_match($invalid_str,$user_name))
 		{
 
 			//save to database

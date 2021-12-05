@@ -12,7 +12,9 @@ session_start();
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		$invalid_str="/[\'^£$%&*()}{@#~?><>,|=_+¬-]/";
+
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name) && !preg_match($invalid_str,$user_name))
 		{
 
 			//read from database
